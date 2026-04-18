@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+<<<<<<< HEAD
 // Fix: always point at the Express server explicitly
 // The CRA proxy sometimes fails — this ensures calls always hit port 5000
 const BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
@@ -29,3 +30,13 @@ export const fetchAnalysis = (id)                        => api.get(`/history/${
 export const deleteAnalysis= (id)                        => api.delete(`/history/${id}`);
 export const askQuestion   = (question, analysisId, ctx) => api.post('/query', { question, analysisId, repoContext: ctx });
 export const healthCheck   = ()                          => api.get('/health');
+=======
+const api = axios.create({ baseURL: '/api' });
+
+export const analyzeRepo   = (repo)                       => api.post('/analyze', { repo });
+export const fetchHistory  = ()                           => api.get('/history');
+export const fetchAnalysis = (id)                         => api.get(`/history/${id}`);
+export const deleteAnalysis= (id)                         => api.delete(`/history/${id}`);
+export const askQuestion   = (question, analysisId, ctx)  => api.post('/query', { question, analysisId, repoContext: ctx });
+export const healthCheck   = ()                           => api.get('/health');
+>>>>>>> a2c609e4af4958d5b5a932a796def4d23dd2d36e

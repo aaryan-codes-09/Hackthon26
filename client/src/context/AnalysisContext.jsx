@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthCtx     = createContext(null);
@@ -40,3 +41,32 @@ export function AnalysisProvider({ children }) {
 
 export const useAnalysis = () => useContext(AnalysisCtx);
 export const useAuth     = () => useContext(AuthCtx);
+=======
+import React, { createContext, useContext, useState } from 'react';
+
+const AnalysisContext = createContext(null);
+
+export function AnalysisProvider({ children }) {
+  const [analysis, setAnalysis]     = useState(null);
+  const [loading,  setLoading]      = useState(false);
+  const [error,    setError]        = useState(null);
+  const [queries,  setQueries]      = useState([]);
+
+  const addQuery = (q, a) => setQueries(prev => [{ q, a, id: Date.now() }, ...prev]);
+  const clearAnalysis = () => { setAnalysis(null); setError(null); setQueries([]); };
+
+  return (
+    <AnalysisContext.Provider value={{
+      analysis, setAnalysis,
+      loading,  setLoading,
+      error,    setError,
+      queries,  addQuery,
+      clearAnalysis,
+    }}>
+      {children}
+    </AnalysisContext.Provider>
+  );
+}
+
+export const useAnalysis = () => useContext(AnalysisContext);
+>>>>>>> a2c609e4af4958d5b5a932a796def4d23dd2d36e

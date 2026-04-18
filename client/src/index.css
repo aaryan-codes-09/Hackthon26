@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
@@ -50,21 +51,85 @@ body {
 /* Typography */
 .gradient-text {
   background: linear-gradient(135deg, var(--cyan) 0%, #60a5fa 45%, var(--violet) 100%);
+=======
+:root {
+  --bg:         #060a0f;
+  --surface:    #0b1017;
+  --card:       #0f1823;
+  --card2:      #131f2e;
+  --border:     #1a2840;
+  --border2:    #243550;
+  --cyan:       #00d9ff;
+  --cyan-dim:   rgba(0,217,255,0.12);
+  --violet:     #8b5cf6;
+  --violet-dim: rgba(139,92,246,0.12);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245,158,11,0.1);
+  --red:        #f43f5e;
+  --red-dim:    rgba(244,63,94,0.1);
+  --green:      #10d9a0;
+  --green-dim:  rgba(16,217,160,0.1);
+  --text:       #e8edf3;
+  --text-2:     #94a3b8;
+  --text-3:     #4a6080;
+  --mono:       'JetBrains Mono', monospace;
+  --sans:       'Outfit', sans-serif;
+  --glow-cyan:  0 0 24px rgba(0,217,255,0.2);
+  --glow-violet:0 0 24px rgba(139,92,246,0.25);
+  --radius:     14px;
+  --radius-sm:  8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(0,217,255,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 100%, rgba(139,92,246,0.05) 0%, transparent 60%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+/* Utility classes */
+.mono  { font-family: var(--mono); }
+.muted { color: var(--text-2); }
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--cyan) 0%, #60a5fa 50%, var(--violet) 100%);
+>>>>>>> a2c609e4af4958d5b5a932a796def4d23dd2d36e
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+<<<<<<< HEAD
 /* Badge */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+=======
+/* Card base */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* Pill / badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+>>>>>>> a2c609e4af4958d5b5a932a796def4d23dd2d36e
   font-family: var(--mono);
   font-size: 0.68rem;
   font-weight: 500;
   padding: 3px 9px;
   border-radius: 20px;
+<<<<<<< HEAD
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
@@ -140,3 +205,15 @@ body {
   box-shadow: 0 0 0 3px rgba(34,211,238,0.1);
 }
 .input::placeholder { color: var(--text-3); }
+=======
+  letter-spacing: 0.05em;
+}
+.badge-cyan   { background: var(--cyan-dim);   color: var(--cyan);   border: 1px solid rgba(0,217,255,0.25); }
+.badge-violet { background: var(--violet-dim); color: var(--violet); border: 1px solid rgba(139,92,246,0.3); }
+.badge-amber  { background: var(--amber-dim);  color: var(--amber);  border: 1px solid rgba(245,158,11,0.25); }
+.badge-red    { background: var(--red-dim);    color: var(--red);    border: 1px solid rgba(244,63,94,0.25); }
+.badge-green  { background: var(--green-dim);  color: var(--green);  border: 1px solid rgba(16,217,160,0.25); }
+
+/* Scrollbar */
+* { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+>>>>>>> a2c609e4af4958d5b5a932a796def4d23dd2d36e

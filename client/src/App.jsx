@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AnalysisProvider, useAuth } from './context/AnalysisContext';
@@ -41,11 +42,30 @@ function AppRoutes() {
     </div>
   );
 }
+=======
+import { Routes, Route } from 'react-router-dom';
+import { AnalysisProvider } from './context/AnalysisContext';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import AnalysisPage from './pages/AnalysisPage';
+import HistoryPage from './pages/HistoryPage';
+>>>>>>> a2c609e4af4958d5b5a932a796def4d23dd2d36e
 
 export default function App() {
   return (
     <AnalysisProvider>
+<<<<<<< HEAD
       <AppRoutes />
+=======
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <Navbar />
+        <Routes>
+          <Route path="/"          element={<HomePage />} />
+          <Route path="/analysis"  element={<AnalysisPage />} />
+          <Route path="/history"   element={<HistoryPage />} />
+        </Routes>
+      </div>
+>>>>>>> a2c609e4af4958d5b5a932a796def4d23dd2d36e
     </AnalysisProvider>
   );
 }
